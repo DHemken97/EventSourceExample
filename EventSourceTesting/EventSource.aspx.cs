@@ -26,9 +26,12 @@ namespace EventSourceTesting
             while (startDate.AddMinutes(1) > DateTime.Now)
             {
                 MQ_Broker.TimerOnTick($"{myId}\n\n", null);
-               MQ_Broker.GetMessages(myId).ForEach(Response.Write);
+               MQ_Broker.GetMessages(myId).ForEach(message =>
+               {
+                   Response.Write("data:"+message);
+               });
                // Response.Write($"data: {DateTime.Now.ToString()}\n\n");
-                Response.Flush();
+                                 Response.Flush();
 
                 System.Threading.Thread.Sleep(1000);
             }

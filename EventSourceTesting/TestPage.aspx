@@ -23,7 +23,7 @@
             var source = new EventSource('./EventSource.aspx');  
   
             source.onopen = function (event) {  
-                document.getElementById('targetDiv').innerHTML += 'Connection Opened.<br>';  
+                document.getElementById('targetDiv').innerHTML += event.toString()+ 'Connection Opened.<br>';  
             };  
   
             source.onerror = function (event) {  

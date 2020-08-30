@@ -56,7 +56,7 @@ namespace EventSourceTesting
         {
             try
             {
-                messages?.Keys.ForEach(client => messages[client].Add(messages.Keys.Count.ToString()+" Clients\r\n"));
+                messages?.Keys.ForEach(client => messages[client].Add(messages.Keys.Count.ToString()+" Clients\n\n"));
 
             }
             catch (Exception exception)
